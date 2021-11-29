@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import { Button } from 'react-bootstrap'
+import Child from './Chilecomp/child.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+  state = {
+      Person : {
+          fullName: "Bouzouita Assil",
+          Profession: "Student",
+          imageprof:"/Image.jpg" ,
+          Quote:[" It's Not About How Hard You Get Hit,It's About How Hard You Can Get Hit And Keep Moving Forward"],
+          Bio: {
+              diploma: ["bachelor's degree in Technial sciences"],
+              skills: [
+                "HTML5/"
+              , "CSS3/"
+              , "JSX/"
+              , "ES6"
+              , "/ReactJS"
+              , "/Github"],
+              langue: { Arabic: "Excellent", English: "Very Good", French: "Good" }
+          }
+      },
+
+      show: false,
+    }
+    handleShow = () => {
+      this.setState({
+        show: !this.state.show,
+      })
+    }
+    render() {
+      return (
+        <div>
+          <Button  variant="danger" onClick={this.handleShow} style={{ marginBottom: "10%" ,color:"red",size:"50"}}>{this.state.show ? "Hide" : "Show"}</Button>
+          {this.state.show &&
+            <Child Person={this.state.Person} />
+          }
+        </div>
+
+    )
+  }
 }
 
-export default App;

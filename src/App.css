@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -35,4 +36,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+h1{
+font-style: italic;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+color: chocolate;
+}
+h2{
+  font-family: monospace;
+}
+
+img{border-color:rgb(31, 177, 187);
+  border-style: ridge;
+  display :block;
+margin:5vh auto;
+width: 300px;
+height: 300px;
+}
+
+
+
+button{
+  font-size: xx-large;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
